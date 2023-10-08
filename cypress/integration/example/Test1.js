@@ -7,8 +7,7 @@ describe('My First Test Suit', function()
 <<<<<<< Updated upstream
          cy.visit("https://amazon.com/")
 =======
-         cy.visit("https://amazon.com")
->>>>>>> Stashed changes
+
 
          cy.get('.search-keyword').type('ca')
 
