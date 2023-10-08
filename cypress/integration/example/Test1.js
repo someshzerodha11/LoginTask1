@@ -4,7 +4,7 @@ describe('My First Test Suit', function()
     it('My First test', function()
         {
 
-         cy.visit("https://rahulshettyacademy.com/seleniumPractise/#/")
+         cy.visit("https://amazon.com/")
 
          cy.get('.search-keyword').type('ca')
 
