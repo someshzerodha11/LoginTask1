@@ -1,0 +1,59 @@
+This is a parent command --
+// Cypress.Commands.add('login', (email, password) => { ... })
+//
+//
+// -- This is a child command --
+// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
+//
+//
+// -- This is a dual command --
+// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
+//
+//
+// -- This will overwrite an existing command --
+// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+
+
+login once cy.session>>>>>>>>>>>youtube
+
+
+
+
+/// <reference types="Cypress" />
+describe('Test Suit', function()
+{
+     before(function()
+   {
+        cy.fixture('testdata').then(function(data)
+        {
+            this.data=data        
+        })
+
+    })
+
+    it('dolthub login test', function()
+      {
+
+         cy.visit('/')
+
+         cy.get('div.FormComponents_inputContainer__l7W2k > div.FormInput_container__bYDqB > input.FormInput_input__fMPWe').type(this.data.username)
+
+         cy.get('div.PasswordInput_passInput__VW0S_ > div:nth-child(1) > div.FormInput_container__bYDqB > input.FormInput_input__fMPWe').type(this.data.password)
+
+        
+         cy.get('[data-cy="signin-with-email-button"]').click()
+
+        
+
+         cy.get('h2:nth-child(1)').should('have.text', 'Welcome to DoltHub')
+
+         cy.get('[data-cy="mobile-navbar-menu-button"]').click()
+
+         cy.get('[data-cy="sign-out-button-mobile"]').click()
+
+
+    })
+
+   
+})
