@@ -27,7 +27,9 @@
 Cypress.Commands.add('login',(username, password) =>
 {
  
-    cy.visit('/')
+    cy.visit('https://www.dolthub.com/signin')
+
+ 
 
     cy.get('div.FormComponents_inputContainer__l7W2k > div.FormInput_container__bYDqB > input.FormInput_input__fMPWe').type(username)
 
@@ -37,7 +39,7 @@ Cypress.Commands.add('login',(username, password) =>
     
 })
 
-Cypress.Commands.add('logout', (sign, out) =>
+Cypress.Commands.add('logout', () =>
 {
     cy.get('[data-cy="mobile-navbar-menu-button"]').click()
 

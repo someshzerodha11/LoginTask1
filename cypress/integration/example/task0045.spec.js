@@ -10,7 +10,7 @@ describe('Test Suit', function()
 
     })
 
-    it('login test', function()
+    it('login test',{scrollBehavior: false}, function()
       {
 
        cy.login(this.data.username, this.data.password)
@@ -19,7 +19,7 @@ describe('Test Suit', function()
 
        cy.title().should('be.equal','My Databases | DoltHub')
 
-       
+       cy.logout()
 
      })
 

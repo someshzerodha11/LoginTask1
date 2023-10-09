@@ -13,7 +13,7 @@ describe('Test suit', function()
  
      })
  
-     it('valid login test', function()
+     it('valid login test',{scrollBehavior: false}, function()
        {
           const lp=new LoginPage()
 
@@ -21,8 +21,10 @@ describe('Test suit', function()
           lp.insertUsername(this.data.username)
           lp.insertPassword(this.data.password)
           lp.Submit()
+          
 
           cy.title().should('be.equal','My Databases | DoltHub')
+          
 
 
 
